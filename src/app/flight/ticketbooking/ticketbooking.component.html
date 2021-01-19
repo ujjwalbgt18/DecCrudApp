@@ -1,0 +1,74 @@
+<div class="container mt-5">
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col">
+        <label>Name</label>
+        <input type="text" formControlName="name" class="form-control" placeholder="Name">
+        <span class="text-danger" *ngIf="f.name.touched && f.name.errors?.required ">
+          Name is required
+      </span>
+      </div>
+      <div class="col">
+        <label>Email</label>
+        <input type="text" formControlName="email" class="form-control" placeholder="Email">
+        <span class="text-danger" *ngIf="f.email.touched && f.email.errors?.required ">
+            Email is required
+        </span>
+        <span class="text-danger" *ngIf="f.email.touched && f.email.errors?.email">
+            Enter a valid email address
+        </span>
+      </div>
+      <div class="col">
+        <label>NO. Of Passenger</label>
+        <input type="number" formControlName="passenger" class="form-control" placeholder="NO. Of Passenger" min="0">
+      </div>
+    </div>
+    <div class="form-row mt-5">
+      <div class="col">
+        <label>Age</label>
+        <input type="number"  formControlName="age" class="form-control" placeholder="Age" min="1" >
+      </div>
+      <div class="col">
+        <label>Source</label>
+        <input type="text" formControlName="source" class="form-control" placeholder="Source">
+      </div>
+      <div class="col">
+        <label>Destination</label>
+        <input type="text" formControlName="destination" class="form-control" placeholder="Destination">
+      </div>
+    </div>
+    <div class="form-row mt-5">
+      <div class="col">
+        <label>Date</label>
+        <input #licenseExpiration="ngbDatepicker"
+        class="form-control"
+        formControlName="date"
+        ngbDatepicker />
+
+      <button class="dp"
+      (click)="licenseExpiration.toggle()"
+      type="button">open</button>
+      </div>
+      <div class="col">
+        <label>Amount</label>
+        <input type="number" formControlName="amount" class="form-control" (change)= "amountChange()">
+      </div>
+      <div class="col">
+        <label>Tax</label>
+        <input type="text" formControlName="tax" class="form-control" placeholder="Tax" readonly>
+      </div>
+      <div class="col">
+        <label>Total Amount</label>
+        <input type="text" formControlName="total" class="form-control" placeholder="Total Amount" readonly>
+      </div>
+    </div>
+    <div class="form-row mt-5">
+      <div class="col">
+        <button class="btn btn-success w-25 d-block m-auto" [disabled]="bookForm.invalid">Book Now</button>
+      </div>
+    </div>
+  </form>
+</div>  
+
+
+

@@ -1,0 +1,13 @@
+.form-row > .col, .form-row > [class*="col-"] {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+button.dp {
+    position: absolute;
+    right: 16px;
+    top: 29px;
+    height: 36px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 0 12px;
+}

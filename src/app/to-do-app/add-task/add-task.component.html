@@ -1,0 +1,48 @@
+<div class="container" style="max-width: 600px; margin: 0 auto;">
+    <h1 class="text-center mt-5">To DO List</h1>
+    <div class="total">
+        <ul>
+            <li>
+               Total Task: {{taskList.length}}
+            </li>
+            <li>
+                Task Completed: {{ totalDone }}
+            </li>
+        </ul>
+    </div>
+    <div class="addTask mt-5">
+        <form #todoForm="ngForm" (ngSubmit)="onSubmit(todoForm)">
+            <div class="form-inline justify-content-center">
+                <div class="form-group mx-sm-3 mb-2" style="width: 76%;">
+                    <input type="text" class="form-control w-100" required name="task"  placeholder="Add Your Task" [(ngModel)]="myTasks"  #myTask="ngModel">
+                    <div class="text-danger" *ngIf="!myTask.valid && myTask.touched">
+                        User name is required!
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success mb-2" [disabled]="!todoForm.form.valid">Add Task </button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- <div class="taskView"  *ngIf="show">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let tasks of taskList; let i = index" >
+               
+                <div class="custom-control custom-checkbox" [ngClass]="{'taskDone': tasks.isChecked }">
+                   <div class="d-flex justify-content-between align-items-center">
+                    <div>{{tasks.value}}</div>
+                    <div class="d-flex">
+                        <div class="form-group custCheck">
+                            <input type="checkbox" id="{{ i }}"  (change)="checkCheckBoxvalue($event,i)">
+                            <label for="{{ i }}"></label>
+                          </div>
+                        <button [disabled]="tasks.isChecked" class="float-right remove" (click)="remove(i)"><img src="assets/image/delete.png"></button>
+                    </div>
+                </div>
+                </div>
+            </li>
+        </ul>
+    </div> -->
+    
+    <app-view-task [taskList]="taskList"></app-view-task>
+</div>

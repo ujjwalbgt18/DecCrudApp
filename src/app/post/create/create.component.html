@@ -1,0 +1,59 @@
+<div class="container">
+    <h1>Create New Post</h1>
+  
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="first_name">First name:</label>
+            <input 
+                formControlName="first_name"
+                id="first_name" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.first_name.touched && f.first_name.invalid" class="alert alert-danger">
+                <div *ngIf="f.first_name.errors.required">First name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last name:</label>
+            <input 
+                formControlName="last_name"
+                id="last_name" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.last_name.touched && f.last_name.invalid" class="alert alert-danger">
+                <div *ngIf="f.last_name.errors.required">Last name is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input 
+                formControlName="gender"
+                id="gender" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.gender.touched && f.gender.invalid" class="alert alert-danger">
+                <div *ngIf="f.gender.errors.required">Gender is required.</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label for="body">Qualifications</label>
+            <input 
+                formControlName="qualifications"
+                id="qualifications" 
+                type="text" 
+                class="form-control">
+           
+            <div *ngIf="f.qualifications.touched && f.qualifications.invalid" class="alert alert-danger">
+                <div *ngIf="f.qualifications.errors.required">Qualifications is required.</div>
+            </div>
+        </div>
+  
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>

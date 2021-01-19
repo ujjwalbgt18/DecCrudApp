@@ -1,0 +1,81 @@
+.taskView {
+    padding: 25px;
+    box-shadow: 1px 1px 10px #ccc;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+.new {
+    padding: 50px;
+  }
+  
+  .custCheck {
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .custCheck input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .custCheck label {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .custCheck label:before {
+    content:'';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #0079bf;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .custCheck input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid #0079bf;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .custCheck{
+    display: block;
+    margin-bottom: 0 !important;
+}
+label {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 7px;
+}
+.custom-control{
+    padding-left: 0;
+}
+.taskDone {
+  position: relative;
+}
+
+.taskDone:before {content: "";width: calc(100% - 150px);height: 2px;background: #2e671e;position: absolute;top: 12px;left: 0px;transition: 1s;}
+
+button.float-right.remove {
+  border: none;
+  cursor: pointer;
+}
+button.float-right.remove:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.4;
+}

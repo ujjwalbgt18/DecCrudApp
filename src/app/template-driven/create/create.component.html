@@ -1,0 +1,42 @@
+<form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+
+    <input type="text" placeholder="User name"
+           required maxlength="25"
+           [(ngModel)]="userName" name="userName"
+           #pickedName="ngModel">
+    <div *ngIf="!pickedName.valid && pickedName.touched">
+      User name is required!
+    </div>
+  
+    <input type="email" placeholder="Email"
+           required [(ngModel)]="email"
+           name="email" #userEmail="ngModel">
+    <div *ngIf="!userEmail.valid && userEmail.touched">
+      Email is required!
+    </div>
+  
+    <input type="text" placeholder="Nick name"
+           [(ngModel)]="nickName" name="nickName">
+  
+    <input type="password" placeholder="Password" required
+           [(ngModel)]="password" name="password"
+           #userPassword="ngModel">
+    <div *ngIf="!userPassword.valid && userPassword.touched">
+      Password is required!
+    </div>
+  
+  
+    <button type="submit" [disabled]="!newUserForm.form.valid">
+      Register
+    </button>
+  
+    <button type="button" (click)="newUserForm.reset()">
+      Reset
+    </button>
+  
+  </form>
+
+
+<pre>{{ newUserForm.form.value | json }}</pre> <!-- Value of whole form -->
+<pre>User name: {{ pickedName.value }}</pre> <!-- Value of userName field -->
+<pre>Valid form? {{ newUserForm.form.valid | json }}</pre> <!-- Validity of whole form -->

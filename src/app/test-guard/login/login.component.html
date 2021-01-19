@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <h2 class="text-center">Route Guard Login</h2>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4 col-md-offset-5">
+            <div class="jumbotron">
+                <form [formGroup]="guardForm" (ngSubmit)="submit()" autocomplete="off">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" formControlName="email" autocomplete="off"
+                            class="form-control input-sm" placeholder="Email">
+                            <span class="text-danger"
+                                *ngIf="(f.email.touched || submitted ) && f.email.errors?.required ">
+                                Email is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="f.email.touched && f.email.errors?.email">
+                                Enter a valid email address
+                            </span>
+                        </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" name="Password" formControlName="password" autocomplete="off"
+                            class="form-control input-sm" placeholder="Password">
+                            <span class="text-danger"
+                                *ngIf="(f.password.touched || submitted) && f.password.errors?.required">
+                                Password is required
+                            </span>
+                    </div>
+                    <button type="submit" class="btn btn-success">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-5">
+        </div>
+    </div>
+</div>

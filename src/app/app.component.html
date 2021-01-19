@@ -1,0 +1,44 @@
+<header>
+    <button class="btn btn-success" (click)="redirects()">Redirect Button</button>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <div class="collapse navbar-collapse" id="navbarsExample">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/post/index" routerLinkActive="active">Reactive Form</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/temp/create" routerLinkActive="active">Template Driven Form</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/routeguard/testlogin" routerLinkActive="active">RouteGuard Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/flight/book" routerLinkActive="active">Book Ticket</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/todoapp/task" routerLinkActive="active">To Do App</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" *ngIf="loginbtn" routerLink="auth/home" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="loginbtn" routerLink="auth/login" routerLinkActive="active">Login</a>
+            </li>
+            <li class="nav-item">
+                <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="loginbtn" routerLink="auth/registration" routerLinkActive="active">Registration</a>
+            </li>-->
+            <li class="nav-item">
+                <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Please Wait. </p>
+</ngx-spinner>

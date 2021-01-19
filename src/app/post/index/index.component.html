@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="text-center mt-20">Angular CRUD</h1>
+  
+    <a href="#" routerLink="/post/create/" class="btn btn-success">Create New Post</a>
+    
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Gender</th>
+        <th>Qualifications</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.first_name }}</td>
+        <td>{{ post.last_name }}</td>
+        <td>{{ post.gender }}</td>
+        <td>{{ post.qualifications }}</td>
+        <td>
+          <a href="#" [routerLink]="['/view/', post.id]" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/edit/', post.id]" class="btn btn-primary">Edit</a>
+          <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+       
+ </div>
